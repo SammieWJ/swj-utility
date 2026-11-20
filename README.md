@@ -15,4 +15,4 @@ To add real screenshots, place them in `assets/` and replace the two screenshot 
 3. List the SHA-256 checksums for the ZIP and executable in the release notes. Link to a matching VirusTotal report if one is available.
 4. Update the Windows release section in `index.html` with the public release and download links.
 
-SWJ Utility is based on Chris Titus Tech’s [WinUtil 26.11.13](https://github.com/ChrisTitusTech/winutil/releases/tag/26.11.13). See the [upstream MIT license](https://github.com/ChrisTitusTech/winutil/blob/26.11.13/LICENSE).
+Include applicable upstream copyright and MIT license notices with every distributed package.
