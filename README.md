@@ -1,18 +1,27 @@
-# SWJ Utility website
+# SWJ Utility
 
-The static site is hosted at https://sammiewj.github.io/swj-utility/. GitHub Pages deploys the root of the `main` branch.
+SWJ Utility is a Windows desktop app for installing software, adjusting system settings, and running maintenance tools.
 
-## Update the site
+**Windows 11 (64-bit)** · [Download 1.0.2 Preview](https://github.com/SammieWJ/swj-utility/releases/download/v1.0.2-preview/SWJ-Utility-v1.0.2-preview-win-x64.zip) · [Release notes](https://github.com/SammieWJ/swj-utility/releases/tag/v1.0.2-preview) · [Website](https://sammiewj.github.io/swj-utility/)
 
-Edit `index.html` and `styles.css`, then open `index.html` locally to preview. After committing, check the Pages deployment in Actions.
+## Set up on Windows
 
-To add real screenshots, place them in `assets/` and replace the two screenshot placeholders with images. Use alt text that describes the part of the app shown.
+1. Download the ZIP and select **Extract All** in File Explorer.
+2. Open the extracted folder and double-click **SWJ.exe**.
+3. Approve the Windows administrator prompt to open SWJ Utility. No PowerShell window needs to stay on screen.
 
-## Publish a Windows release
+The preview executable is unsigned. To check it before running, upload the extracted `SWJ.exe` to [VirusTotal](https://www.virustotal.com/gui/home/upload). Scan results can miss threats.
 
-1. Test the launcher and administrator startup on Windows.
-2. Package the executable with the upstream MIT license and upload the ZIP to GitHub Releases.
-3. List the SHA-256 checksums for the ZIP and executable in the release notes. Link to a matching VirusTotal report if one is available.
-4. Update the Windows release section in `index.html` with the public release and download links.
+### Optional PowerShell setup
 
-Include applicable upstream copyright and MIT license notices with every distributed package.
+After downloading the ZIP, open PowerShell in the folder where you saved it and run these commands. They extract it into a versioned folder and then launch SWJ.
+
+```powershell
+$destination = Join-Path $env:LOCALAPPDATA 'SWJ Utility\1.0.2-preview'
+Expand-Archive -LiteralPath '.\SWJ-Utility-v1.0.2-preview-win-x64.zip' -DestinationPath $destination -ErrorAction Stop
+Start-Process -FilePath (Join-Path $destination 'SWJ.exe')
+```
+
+## Website and license
+
+GitHub Pages publishes the website from the root of `main`. The Windows ZIP includes the applicable upstream MIT license and copyright notice.
