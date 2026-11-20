@@ -1,54 +1,18 @@
-# SWJ Utility website — GitHub Pages
+# SWJ Utility website
 
-This is a ready-to-publish static website (HTML/CSS/JS) for SWJ Utility. No Node.js, npm, or build step is required.
+The static site is hosted at https://sammiewj.github.io/swj-utility/. GitHub Pages deploys the root of the `main` branch.
 
-## Preview locally
+## Update the site
 
-Double-click `index.html` to preview the website in a browser. The download button is deliberately disabled until you provide a real release URL.
+Edit `index.html` and `styles.css`, then open `index.html` locally to preview. After committing, check the Pages deployment in Actions.
 
-## Publish on GitHub Pages
+To add real screenshots, place them in `assets/` and replace the two screenshot placeholders with images. Use alt text that describes the part of the app shown.
 
-1. Sign in to GitHub and create a **public** repository named `swj-utility` (or another name).
-2. Upload `index.html`, `styles.css`, `script.js`, and `swj-mark.svg` to the repository **root**. Commit the files.
-3. In the repository, go to **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
-4. Wait for GitHub Pages to deploy. Your URL will usually be `https://YOUR-USERNAME.github.io/swj-utility/`.
-5. Open the URL and check the site on desktop and mobile.
+## Publish a Windows release
 
-## Enable the download button
+1. Test the launcher and administrator startup on Windows.
+2. Package the executable with the upstream MIT license and upload the ZIP to GitHub Releases.
+3. List the SHA-256 checksums for the ZIP and executable in the release notes. Link to a matching VirusTotal report if one is available.
+4. Update the Windows release section in `index.html` with the public release and download links.
 
-1. In your repository, open **Releases → Draft a new release**.
-2. Add a version tag (for example `v1.0.0`), a release title, notes, and upload your **tested** `SWJ.exe` as a release asset. Publish the release.
-3. Edit `script.js`: set `RELEASE_URL` to `https://github.com/YOUR-USERNAME/swj-utility/releases/latest` (replace both placeholders).
-4. Commit `script.js`. The Download button will now link to the release page. This approach keeps the link working when you upload future versions.
-
-**Do not upload the EXE to the website's `assets` directory.** Use GitHub Releases instead. Do not publish an untested executable. Your EXE may show SmartScreen warnings if unsigned; don't claim it is digitally signed.
-
-## Add actual screenshots
-
-The two screenshots on the page are placeholders. Capture screenshots from your running app, create an `assets` folder, and save them as `assets/dashboard.png` and `assets/tweaks.png`, then edit the two `.screenshot` blocks in `index.html` to include image tags, for example:
-
-```html
-<img src="assets/dashboard.png" alt="SWJ Utility dashboard" loading="lazy">
-```
-
-You may wish to add this CSS:
-
-```css
-.screenshot img { max-width: 100%; height: auto; border-radius: 10px; }
-```
-
-## Attribution and license
-
-SWJ Utility is based on Chris Titus Tech's Windows Utility: https://github.com/ChrisTitusTech/winutil
-
-Before publishing or distributing your modified binary/source, verify the **license in the exact upstream version** you used and include the license text, copyright notices, and any other notices required by that license. The website credits the upstream project and links to its license page. Website files here are newly authored for this project; that does not change the upstream utility's licensing obligations.
-
-## Customize
-
-- Change colors, spacing, and typography in `styles.css`.
-- Replace the SVG logo in `swj-mark.svg` if desired.
-- Edit the site copy in `index.html`.
-- Set the real GitHub Releases URL in `script.js`.
-- Optionally add a `CNAME` file for a custom domain after configuring DNS.
-
-This website does not collect personal information or use analytics by default.
+SWJ Utility is based on Chris Titus Tech’s [WinUtil 26.11.13](https://github.com/ChrisTitusTech/winutil/releases/tag/26.11.13). See the [upstream MIT license](https://github.com/ChrisTitusTech/winutil/blob/26.11.13/LICENSE).
