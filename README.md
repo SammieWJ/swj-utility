@@ -2,26 +2,15 @@
 
 SWJ Utility is a Windows desktop app for installing software, adjusting system settings, and running maintenance tools.
 
-**Windows 11 (64-bit)** · [Download 1.0.2 Preview](https://github.com/SammieWJ/swj-utility/releases/download/v1.0.2-preview/SWJ-Utility-v1.0.2-preview-win-x64.zip) · [Release notes](https://github.com/SammieWJ/swj-utility/releases/tag/v1.0.2-preview) · [Website](https://sammiewj.github.io/swj-utility/)
+**Windows 11 (64-bit)** · [Download 1.0.3 Preview](https://github.com/SammieWJ/swj-utility/releases/download/v1.0.3-preview/SWJ-Utility.exe) · [Release notes](https://github.com/SammieWJ/swj-utility/releases/tag/v1.0.3-preview) · [Website](https://sammiewj.github.io/swj-utility/)
 
-## Set up on Windows
+## Run on Windows
 
-1. Download the ZIP and select **Extract All** in File Explorer.
-2. Open the extracted folder and double-click **SWJ.exe**.
-3. Approve the Windows administrator prompt to open SWJ Utility. No PowerShell window needs to stay on screen.
+1. Download **SWJ-Utility.exe**.
+2. Double-click it and approve the Windows administrator prompt. SWJ Utility opens in its own window.
 
-The preview executable is unsigned. To check it before running, upload the extracted `SWJ.exe` to [VirusTotal](https://www.virustotal.com/gui/home/upload). Scan results can miss threats.
-
-### Optional PowerShell setup
-
-After downloading the ZIP, open PowerShell in the folder where you saved it and run these commands. They extract it into a versioned folder and then launch SWJ.
-
-```powershell
-$destination = Join-Path $env:LOCALAPPDATA 'SWJ Utility\1.0.2-preview'
-Expand-Archive -LiteralPath '.\SWJ-Utility-v1.0.2-preview-win-x64.zip' -DestinationPath $destination -ErrorAction Stop
-Start-Process -FilePath (Join-Path $destination 'SWJ.exe')
-```
+The preview executable is unsigned and still needs a live Windows test. To scan it before running, upload the downloaded EXE to [VirusTotal](https://www.virustotal.com/gui/home/upload). Scan results can miss threats.
 
 ## Website and license
 
-GitHub Pages publishes the website from the root of `main`. The Windows ZIP includes the applicable upstream MIT license and copyright notice.
+GitHub Pages publishes the website from the root of `main`. The MIT license is included in the app and attached to the release.
